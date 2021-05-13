@@ -1,0 +1,1098 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>935</width>
+    <height>595</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>935</width>
+    <height>595</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>935</width>
+    <height>595</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:white;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame_left">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>371</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <property name="statusTip">
+     <string>Dashboard</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#frame_left{
+	background-color:white;
+	font-family:sans-serif;
+}
+#frame_left:hover{
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="frame_left_dash">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>61</width>
+       <height>551</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>Navigation Menu</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>60</y>
+       <width>241</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>24</pointsize>
+      </font>
+     </property>
+     <property name="statusTip">
+      <string>Quick Stats Head</string>
+     </property>
+     <property name="text">
+      <string>Global Stats</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>190</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>Country Code</string>
+     </property>
+     <property name="text">
+      <string>Country Code</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Country_name_quick">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>170</y>
+       <width>57</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>--</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Country_code_quick">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>190</y>
+       <width>57</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>--</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_15">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>250</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>Date (Specific Zone)</string>
+     </property>
+     <property name="text">
+      <string>Date (GMT + 5:30)</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>210</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>Slug</string>
+     </property>
+     <property name="text">
+      <string>Slug</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Date_specific_quick">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>250</y>
+       <width>57</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>--</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_18">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>170</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>Country Name</string>
+     </property>
+     <property name="text">
+      <string>Country</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_19">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>230</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>Date</string>
+     </property>
+     <property name="text">
+      <string>Date</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Date_quick">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>230</y>
+       <width>57</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>--</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Slug_quick">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>210</y>
+       <width>57</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>--</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="newRecovered_quick">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>350</y>
+       <width>57</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>--</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_37">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>390</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>Total Deaths </string>
+     </property>
+     <property name="text">
+      <string>Total Deaths</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_38">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>350</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>New Recovered Cases </string>
+     </property>
+     <property name="text">
+      <string>New Recovered</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="totalDeaths_quick">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>390</y>
+       <width>57</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>--</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_40">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>370</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>Total Recovered Cases</string>
+     </property>
+     <property name="text">
+      <string>Total Recovered</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="newConfirmed_quick">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>310</y>
+       <width>57</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>--</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="totalConfirmed_quick">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>330</y>
+       <width>57</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>--</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="totalRecovered_quick">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>370</y>
+       <width>57</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>--</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_44">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>330</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>Total Confirmed Cases</string>
+     </property>
+     <property name="text">
+      <string>Total Confirmed</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_45">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>310</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>New Confirmed cases</string>
+     </property>
+     <property name="text">
+      <string>New Confirmed</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_46">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>470</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>Recovery Rate in Percentage</string>
+     </property>
+     <property name="text">
+      <string>Recovery Rate (in %)</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_47">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>450</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>Recovery Percentage</string>
+     </property>
+     <property name="text">
+      <string>Recovery (in %)</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Recovery_rate_quick">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>470</y>
+       <width>57</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>--</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Recovery_perc_quick">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>450</y>
+       <width>57</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>--</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_right">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>0</y>
+      <width>551</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#frame_right{
+	background-color:white;
+	font-family:sans-serif;
+}
+#frame_right:hover{
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="btn_search">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>130</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="statusTip">
+      <string>Search Button</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#btn_search{
+	background-color:white;
+	border:1px solid rgb(207,207,207);
+	border-radius: 10px;
+	cursor:pointer;
+	color : rgb(77,77,77);
+}
+#btn_search:hover{
+	color : white;
+	background-color: royalblue;
+}</string>
+     </property>
+     <property name="text">
+      <string>Search</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="Search_box">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>130</y>
+       <width>411</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <property name="contextMenuPolicy">
+      <enum>Qt::DefaultContextMenu</enum>
+     </property>
+     <property name="statusTip">
+      <string>Search Box</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Search_box{
+	color:rgb(77,77,77);
+}</string>
+     </property>
+     <property name="text">
+      <string>Search Here</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="head_title">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>20</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>26</pointsize>
+      </font>
+     </property>
+     <property name="statusTip">
+      <string>Application Name</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#101010;</string>
+     </property>
+     <property name="text">
+      <string>Corona - API</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_desc">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>70</y>
+       <width>381</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>Application Description</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color : rgb(101,101,101);</string>
+     </property>
+     <property name="text">
+      <string>Get Real-Time Corona Status of any Country around the Globe</string>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="logs_area">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>430</y>
+       <width>531</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>logs</string>
+     </property>
+    </widget>
+    <widget class="QTabWidget" name="results_tab">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>170</y>
+       <width>511</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="statusTip">
+      <string>Results Tab</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="tabPosition">
+      <enum>QTabWidget::North</enum>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <property name="tabBarAutoHide">
+      <bool>false</bool>
+     </property>
+     <widget class="QWidget" name="data_disp_tab">
+      <property name="styleSheet">
+       <string notr="true">
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <attribute name="title">
+       <string>Data</string>
+      </attribute>
+      <widget class="QTabWidget" name="data_tabs">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>491</width>
+         <height>201</height>
+        </rect>
+       </property>
+       <property name="statusTip">
+        <string>Data tab</string>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="country_dets_tab">
+        <attribute name="title">
+         <string>Country Details</string>
+        </attribute>
+        <widget class="QLabel" name="Country_name_search">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>20</y>
+           <width>57</width>
+           <height>15</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>--</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_2">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>40</y>
+           <width>121</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="statusTip">
+          <string>Country Code</string>
+         </property>
+         <property name="text">
+          <string>Country Code</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Country_code_search">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>40</y>
+           <width>57</width>
+           <height>15</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>--</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_3">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>60</y>
+           <width>121</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="statusTip">
+          <string>Slug</string>
+         </property>
+         <property name="text">
+          <string>Slug</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_5">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>100</y>
+           <width>121</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="statusTip">
+          <string>Date (Specific Zone)</string>
+         </property>
+         <property name="text">
+          <string>Date (GMT + 5:30)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Date_specific_search">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>100</y>
+           <width>57</width>
+           <height>15</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>--</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>20</y>
+           <width>121</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="statusTip">
+          <string>Country Name</string>
+         </property>
+         <property name="text">
+          <string>Country</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_4">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>80</y>
+           <width>121</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="statusTip">
+          <string>Date</string>
+         </property>
+         <property name="text">
+          <string>Date</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Date_search">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>80</y>
+           <width>57</width>
+           <height>15</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>--</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Slug_search">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>60</y>
+           <width>57</width>
+           <height>15</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>--</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="corona_stats_tab">
+        <attribute name="title">
+         <string>Corona Stats</string>
+        </attribute>
+        <widget class="QLabel" name="label_22">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>40</y>
+           <width>131</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="statusTip">
+          <string>Total Confirmed Cases</string>
+         </property>
+         <property name="text">
+          <string>Total Confirmed</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="newConfirmed_search">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>20</y>
+           <width>57</width>
+           <height>15</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>--</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="totalConfirmed_search">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>40</y>
+           <width>57</width>
+           <height>15</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>--</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_25">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>120</y>
+           <width>131</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="statusTip">
+          <string>Recovery Percentage</string>
+         </property>
+         <property name="text">
+          <string>Recovery (in %)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_26">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>60</y>
+           <width>131</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="statusTip">
+          <string>New Recovered Cases </string>
+         </property>
+         <property name="text">
+          <string>New Recovered</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Recovery_perc_search">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>120</y>
+           <width>57</width>
+           <height>15</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>--</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_28">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>20</y>
+           <width>131</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="statusTip">
+          <string>New Confirmed cases</string>
+         </property>
+         <property name="text">
+          <string>New Confirmed</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_29">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>80</y>
+           <width>131</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="statusTip">
+          <string>Total Recovered Cases</string>
+         </property>
+         <property name="text">
+          <string>Total Recovered</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="totalRecovered_search">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>80</y>
+           <width>57</width>
+           <height>15</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>--</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="newRecovered_search">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>60</y>
+           <width>57</width>
+           <height>15</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>--</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_32">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>140</y>
+           <width>131</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="statusTip">
+          <string>Recovery Rate in Percentage</string>
+         </property>
+         <property name="text">
+          <string>Recovery Rate (in %)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Recovery_rate_search">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>140</y>
+           <width>57</width>
+           <height>15</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>--</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_34">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>100</y>
+           <width>131</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="statusTip">
+          <string>Total Deaths </string>
+         </property>
+         <property name="text">
+          <string>Total Deaths</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="totalDeaths_search">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>100</y>
+           <width>57</width>
+           <height>15</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>--</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="search_res_tab">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <attribute name="title">
+       <string>Search Results</string>
+      </attribute>
+      <widget class="QListView" name="search_res_list">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>481</width>
+         <height>201</height>
+        </rect>
+       </property>
+       <property name="statusTip">
+        <string>Search Results</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>935</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSave"/>
+    <addaction name="actionPrint"/>
+    <addaction name="actionRefresh"/>
+    <addaction name="separator"/>
+    <addaction name="actionSettings"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuOther">
+    <property name="title">
+     <string>Other</string>
+    </property>
+    <addaction name="actionHide_Menu"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuOther"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save </string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionPrint">
+   <property name="text">
+    <string>Print</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionRefresh">
+   <property name="text">
+    <string>Refresh</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actionHide_Menu">
+   <property name="text">
+    <string>Hide Menu</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+H</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
