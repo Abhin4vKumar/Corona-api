@@ -293,19 +293,19 @@ class Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-        self.actionSave = QtWidgets.QAction(MainWindow)
-        self.actionSave.setObjectName("actionSave")
         self.actionPrint = QtWidgets.QAction(MainWindow)
         self.actionPrint.setObjectName("actionPrint")
         self.actionRefresh = QtWidgets.QAction(MainWindow)
         self.actionRefresh.setObjectName("actionRefresh")
+        self.actionRefresh.triggered.connect(self.refresh_data)
         self.actionSettings = QtWidgets.QAction(MainWindow)
         self.actionSettings.setObjectName("actionSettings")
         self.actionExit = QtWidgets.QAction(MainWindow)
         self.actionExit.setObjectName("actionExit")
+        self.actionExit.triggered.connect(self.exit_)
         self.actionHide_Menu = QtWidgets.QAction(MainWindow)
         self.actionHide_Menu.setObjectName("actionHide_Menu")
-        self.menuFile.addAction(self.actionSave)
+        self.actionHide_Menu.triggered.connect(self.hide_menu_)
         self.menuFile.addAction(self.actionPrint)
         self.menuFile.addAction(self.actionRefresh)
         self.menuFile.addSeparator()
@@ -418,8 +418,6 @@ class Ui_MainWindow(object):
         self.results_tab.setTabText(self.results_tab.indexOf(self.search_res_tab), _translate("MainWindow", "Search Results"))
         self.menuFile.setTitle(_translate("MainWindow", "File"))
         self.menuOther.setTitle(_translate("MainWindow", "Other"))
-        self.actionSave.setText(_translate("MainWindow", "Save "))
-        self.actionSave.setShortcut(_translate("MainWindow", "Ctrl+S"))
         self.actionPrint.setText(_translate("MainWindow", "Print"))
         self.actionPrint.setShortcut(_translate("MainWindow", "Ctrl+P"))
         self.actionRefresh.setText(_translate("MainWindow", "Refresh"))
@@ -544,6 +542,10 @@ class Ui_MainWindow(object):
                     if item.text():
                         self.update_search_panel_results(str(item.text()))
 
+    def hide_menu_(self):
+            self.menubar.hide()
+    def exit_(self):
+            exit()
     def updateLabel(self,label_name,param):
             label_name.setText(str(self.data[param[0]][param[1]]))
             label_name.adjustSize()
