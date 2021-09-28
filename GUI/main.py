@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
         self.label_desc.adjustSize()
         self.label_15.adjustSize()
         self.label_5.adjustSize()
-
+        self.search_res = None
     def load_settings(self):
         if p.exists(p.join(self.session_path,self.quick_param_settings)):
                 with open(p.join(self.session_path,self.quick_param_settings)) as panel_file:
@@ -147,6 +147,7 @@ class Ui_MainWindow(object):
         self.btn_search = QtWidgets.QPushButton(self.frame_right)
         self.btn_search.setGeometry(QtCore.QRect(440, 130, 91, 31))
         self.btn_search.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        self.btn_search.clicked.connect(self.search)
         self.btn_search.setStyleSheet("#btn_search{\n"
 "    background-color:white;\n"
 "    border:1px solid rgb(207,207,207);\n"
@@ -275,9 +276,10 @@ class Ui_MainWindow(object):
         self.search_res_tab = QtWidgets.QWidget()
         self.search_res_tab.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.search_res_tab.setObjectName("search_res_tab")
-        self.search_res_list = QtWidgets.QListView(self.search_res_tab)
+        self.search_res_list = QtWidgets.QListWidget(self.search_res_tab)
         self.search_res_list.setGeometry(QtCore.QRect(10, 10, 481, 201))
         self.search_res_list.setObjectName("search_res_list")
+        self.search_res_list.clicked.connect(self.update_search_connector)
         self.results_tab.addTab(self.search_res_tab, "")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -434,7 +436,10 @@ class Ui_MainWindow(object):
         self.data = eval(z.text)
 
     def display_data_quick(self):
-        
+        if self.quick_param == 'Global':
+                self.Country_code_quick.setText('-Global-')
+                self.Country_name_quick.setText('-Global-')
+                self.Slug_quick.setText('-Global-')
         #quick setup
         self.updateLabel(label_name=self.newConfirmed_quick,param=[self.quick_param,'NewConfirmed'])
         self.Date_specific_quick.setText(self.time_specific_cal(self.data[self.quick_param]['Date']))
@@ -443,6 +448,13 @@ class Ui_MainWindow(object):
         self.Date_quick.adjustSize()
         self.updateLabel(label_name=self.totalConfirmed_quick,param=[self.quick_param,'TotalConfirmed'])
         self.updateLabel(label_name=self.newRecovered_quick,param=[self.quick_param,'NewRecovered'])
+        recovered_perc = int(((self.data[self.quick_param]['TotalRecovered'] * 100 )/ self.data[self.quick_param]['TotalConfirmed'] )*100)/100
+        self.Recovery_perc_quick.setText(str(recovered_perc))
+        if self.data[self.quick_param]['NewConfirmed'] != 0:
+                recovery_rate_perc = int(((self.data[self.quick_param]['NewRecovered'] * 100 )/ self.data[self.quick_param]['NewConfirmed'] )*100)/100
+        else:
+                recovery_rate_perc = '0'
+        self.Recovery_rate_quick.setText(str(recovery_rate_perc))
         self.updateLabel(label_name=self.totalDeaths_quick,param=[self.quick_param,'TotalDeaths'])
         self.updateLabel(label_name=self.totalRecovered_quick,param=[self.quick_param,'TotalRecovered'])
         if 'CountryCode' in self.data[self.quick_param]:
@@ -468,6 +480,69 @@ class Ui_MainWindow(object):
                     time_sec -= 60
             time = date + ' ' + str(time_hrs) + ':' + str(time_min) + ':' + str(time_sec)
             return time
+
+    def search_param(self , search_query , param):
+            search_data = []
+            for i in self.data['Countries']:
+                    if search_query.upper() in i[param].upper():
+                            search_data.append(i)
+            return search_data   
+    def search(self):
+            search_query = self.Search_box.text()
+            result = self.search_param(search_query , 'Country')
+            if len(result) == 0:
+                    result = self.search_param(search_query , 'CountryCode')
+                    if len(result) == 0:
+                            self.search_res = None
+                    else:
+                            self.search_res = result
+            else:
+                    self.search_res = result
+            return self.update_search_list()            
+    def update_search_panel_results(self , item):
+            self.Country_name_search.setText(item)
+            self.Country_code_search.setText(self.result_items_dict[item]['CountryCode'])
+            self.Slug_search.setText(self.result_items_dict[item]['Slug'])
+            self.newConfirmed_search.setText(str(self.result_items_dict[item]['NewConfirmed']))
+            self.totalConfirmed_search.setText(str(self.result_items_dict[item]['TotalConfirmed']))
+            self.newRecovered_search.setText(str(self.result_items_dict[item]['NewRecovered']))
+            self.totalRecovered_search.setText(str(self.result_items_dict[item]['TotalRecovered']))
+            self.totalDeaths_search.setText(str(self.result_items_dict[item]['TotalDeaths']))
+            recovered_perc_search = int(((self.result_items_dict[item]['TotalRecovered']*100)/self.result_items_dict[item]['TotalConfirmed'])*100)/100
+            if self.result_items_dict[item]['NewConfirmed'] != 0:
+                    recovery_rate_perc_search = int(((self.result_items_dict[item]['NewRecovered']*100)/self.result_items_dict[item]['NewConfirmed'])*100)/100
+            else:
+                    recovery_rate_perc_search = 0
+            self.Recovery_perc_search.setText(str(recovered_perc_search))
+            self.Recovery_rate_search.setText(str(recovery_rate_perc_search))
+            self.Date_specific_search.setText(self.time_specific_cal(self.result_items_dict[item]['Date']))
+            self.Date_search.setText(self.time_specific_cal(self.result_items_dict[item]['Date'],gmt_val=[0,0,0]))
+            self.Date_specific_search.adjustSize()
+            self.Date_search.adjustSize()
+            self.Country_name_search.adjustSize()
+            self.Country_code_search.adjustSize()
+            self.Slug_search.adjustSize()
+            self.newConfirmed_search.adjustSize()
+            self.totalConfirmed_search.adjustSize()
+            self.newRecovered_search.adjustSize()
+            self.totalRecovered_search.adjustSize()
+            self.totalDeaths_search.adjustSize()
+            self.Recovery_perc_search.adjustSize()
+            self.Recovery_rate_search.adjustSize()
+
+    def update_search_list(self):
+            if self.search_res is not None:
+                self.result_items_dict = {}
+                for item in self.search_res:
+                        if item is not None:
+                                self.result_items_dict[item['Country']] = item
+                                self.search_res_list.addItem(item['Country'])
+
+    def update_search_connector(self):
+            item = self.search_res_list.currentItem()
+            if item is not None:
+                    if item.text():
+                        self.update_search_panel_results(str(item.text()))
 
     def updateLabel(self,label_name,param):
             label_name.setText(str(self.data[param[0]][param[1]]))
